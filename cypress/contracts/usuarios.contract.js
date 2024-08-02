@@ -1,16 +1,19 @@
 const Joi = require ('joi')
 
-const produtosSchema = Joi.object({
-    quantidade: Joi.number(), 
-    produtos: Joi.array().items({
+
+
+const usuariosSchema = Joi.object({
+     
+    usuarios: Joi.array().items({
         nome: Joi.string(),
-        preco: Joi.number(),
-        descricao: Joi.string(),
-        quantidade: Joi.number(),
-        _id: Joi.string()
-    })
+        email: Joi.string(),
+        password: Joi.string(),
+        administrador: Joi.string(),
+        _id: Joi.string(),
+    }),
+    quantidade: Joi.number()
 })
-export default produtosSchema;
+export default usuariosSchema;
 /// <reference types="cypress" />
 describe('Testes da Funcionalidade Usuarios', () => {
 
